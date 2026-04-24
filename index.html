@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Themed Webpage</title>
+
+    <style>
+        /* TAG SELECTORS */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #eef5ff;
+        }
+
+        header {
+            background: linear-gradient(to right, #007BFF, #00A8FF);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #0056b3;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #cce5ff;
+        }
+
+        section {
+            display: flex;
+            padding: 20px;
+            gap: 15px;
+        }
+
+        article {
+            flex: 3;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        aside {
+            flex: 1;
+            background-color: #dbe9ff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        /* CLASS SELECTORS */
+        .highlight {
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .card {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f0f7ff;
+            border-left: 5px solid #007BFF;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 8px 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input {
+            padding: 8px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* ID SELECTORS */
+        #main-title {
+            font-size: 34px;
+            letter-spacing: 1px;
+        }
+
+        #footer-text {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1 id="main-title">Fiel Website</h1>
+        <p>Mid-Term Laboratory Exam</p>
+        <p id="student-info"></p> <!-- A. Output -->
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <section>
+
+        <!-- ARTICLE -->
+        <article>
+            <h2 class="highlight">Main Article</h2>
+            <p>
+                This layout is for my exam <span class="highlight"> today </span>
+                for 1 hour.
+            </p>
+
+            <!-- A. Variables & Output -->
+            <div class="card">
+                <h3>Profile</h3>
+                <p id="profile"></p>
+            </div>
+
+            <!-- B. Button Function -->
+            <div class="card">
+                <h3>Button Alert</h3>
+                <button onclick="showAlert()">Click Me</button>
+            </div>
+
+            <!-- C. User Input -->
+            <div class="card">
+                <h3>User Input</h3>
+                <input type="text" id="userInput" placeholder="Type something..." onkeyup="displayInput()">
+                <p id="output"></p>
+            </div>
+
+            <!-- D. Event Handling -->
+            <div class="card">
+                <h3>Change Content</h3>
+                <button onclick="changeContent()">Change Text</button>
+                <p id="change-text">Original content here.</p>
+            </div>
+
+        </article>
+
+        <!-- ASIDE -->
+        <aside>
+            <h3>Sidebar</h3>
+            <p>
+                Error pa akoa xampp hahaha.
+            </p>
+
+            <div class="card">
+                <p><strong>Tip:</strong> Change port to 3307.</p>
+            </div>
+        </aside>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p id="footer-text">© 2026 My Mid-Term Exam | Output</p>
+    </footer>
+
+<script>
+    // A. Variables and Output
+    let name = "James Fiel";
+    let course = "BS Information Technology";
+
+    document.getElementById("profile").innerHTML =
+        "Name: " + name + "<br>Course: " + course;
+
+    document.getElementById("student-info").innerHTML =
+        "Student: " + name + " | " + course;
+
+    // B. Button Function
+    function showAlert() {
+        alert("Button clicked!");
+    }
+
+    // C. User Input
+    function displayInput() {
+        let input = document.getElementById("userInput").value;
+        document.getElementById("output").innerHTML =
+            "You typed: " + input;
+    }
+
+    // D. Event Handling
+    function changeContent() {
+        document.getElementById("change-text").innerHTML =
+            "Content successfully changed!";
+    }
+</script>
+
+</body>
+</html>
